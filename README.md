@@ -1,5 +1,5 @@
 # Sky-nodejs-restfull
-# Restfull + Express + JWT + Mongoose + Axios +  Mocha + Chai + Swagger + Docker + Kibana Integration
+# Restfull + Express + JWT + Mongoose + Axios +  Mocha + Chai + Swagger + Docker + Kibana Integration and more
 
 This project was created with microservices architecture.
 
@@ -10,6 +10,21 @@ This project was created with microservices architecture.
 ### Execute server
 Start server.
  > - npm start
+
+###env file
+``
+PORT - port server
+ENV - environment 
+projectName - project name
+HOST - endpoint url
+
+dbUser - database user
+dbPassword - database password
+dbHost - database endpoint
+
+saltKey - secret key jwt
+tokenExpiresIn - token expires in
+``
 
 ### API Docs
 
