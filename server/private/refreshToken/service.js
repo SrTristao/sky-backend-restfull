@@ -3,12 +3,12 @@ import { logger } from '../../helpers/logger/logger';
 import {
   generateToken, decodeToken
 } from '../../services/jwt';
-import { tokenMapper } from '../../mappers/token';
+import { mapper } from './mapper';
 import { updateToken } from '../../repositories/token';
 
 export const newToken = async (req) => {
   try {
-    const user = tokenMapper(req.user);
+    const user = mapper(req.user);
 
     let tokenUpdated = await generateToken(user);
 
