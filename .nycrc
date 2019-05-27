@@ -1,0 +1,40 @@
+{
+  "all": true,
+  "check-coverage": true,
+  "per-file": true,
+  "lines": 75,
+  "statements": 75,
+  "functions": 75,
+  "branches": 75,
+  "include": [
+    "server/**/*.js"
+  ],
+  "exclude": [
+    "server/**/*.spec.js",
+    "server/**/*swagger.js",
+    "server/swaggerConfig.js",
+    "server/app.js",
+    "server/routes.js",
+    "server/knex.js",
+    "server/config.js",
+    "server/private/routes.js",
+    "server/public/routes.js",
+    "server/public/healthcheck/*.js",
+    "server/**/*schemaValidation.js",
+    "server/middlewares/**/*.js",
+
+    "server/private/**/*repository.js"
+  ],
+  "ignore-class-method": "methodToIgnore",
+  "reporter": [
+    "lcov",
+    "text-summary",
+    "html",
+    "text"
+  ],
+  "extension": [
+    ".js"
+  ],
+  "cache": true,
+  "all": true
+}
