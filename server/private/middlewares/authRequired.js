@@ -18,18 +18,8 @@ export const authRequired = (roles = []) => {
                 return next();
             }
 
-            const token =
-                req.get("Authorization").split(" ")[1];
-
-            const user = await getById(req.user.id);
-
-            if (token !== user.token) return res.status(HttpStatus.UNAUTHORIZED).send({
-                status: HttpStatus.UNAUTHORIZED,
-                message: 'Não autorizado.'
-            });
-
             const rolesArray = lodash.flattenDeep([roles, ['admin']]);
-            const isAuthorized = rolesArray.some(role => user.role === role);
+            const isAuthorized = rolesArray.some(role => req.user.role === role);
 
             if (!isAuthorized) {
                 return res.status(HttpStatus.FORBIDDEN).send({

@@ -1,17 +1,24 @@
 import jwt from 'jsonwebtoken';
 import HttpStatus from 'http-status-codes';
-
+import { getById } from '../repositories/user'
 export const verifyToken = async (
   req, res, next
 ) => {
   try {
     if (req.method !== "OPTIONS") {
-      const token =
+      let token =
         req.get("Authorization")
 
       if (!token) throw new Error("Usuário não autorizado.");
 
-      req.user = await verify(token.split(" ")[1]);
+      token = token.split(" ")[1];
+
+      req.user = await verify(token);
+
+      const user = await getById(req.user.id);
+      
+      if (user.token !== token) throw new Error('Não autorizado.')
+
     }
     next();
   } catch (err) {
