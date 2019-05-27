@@ -6,7 +6,7 @@ const swaggerConfig = () => {
   const swaggerDefinition = {
     swagger: '2.0',
     info: {
-      title: 'Deepwater Medicos Backend Swagger API',
+      title: 'Sky backend restfull',
       version: '1.0.0',
       description: 'Endpoints documentation',
     },
