@@ -11,17 +11,17 @@ This project was created with microservices architecture.
 Start server.
 > npm start
 
-###env file
+## env
 
-> PORT - port server
-> ENV - environment 
-> projectName - project name
-> HOST - endpoint url
-> dbUser - database user
-> dbPassword - database password
-> dbHost - database endpoint
-> saltKey - secret key jwt
-> tokenExpiresIn - token expires in
+- `PORT`: port server
+- `ENV`: environment
+- `projectName`: project name
+- `HOST`: endpoint url
+- `dbUser`: database user
+- `dbPassword`: database password
+- `dbHost`: database endpoint
+- `saltKey`: secret key for jwt 
+- `tokenExpiresIn`: duration time token
 
 
 ### API Docs
