@@ -1,3 +1,19 @@
-# boilerplate nodejs
-# Restfull + Express + JWT + Joi + Knex + Axios + SQLString + Mocha + Chai + Swagger + Docker + Kibana Integration + Jenkins + Bitbucket Pipeline
+# Sky-nodejs-restfull
+# Restfull + Express + JWT + Mongoose + Axios +  Mocha + Chai + Swagger + Docker + Kibana Integration
+
+### <i class="icon-hdd"></i> How install and execute
+
+> npm install
+
+### Execute server
+Start server.
+ > - npm start
+
+### API Docs
+
+This API created with restFull and you need to provide authentication details which will be used through API calls.
+
+Go path
+
+> - /api-docs
 
