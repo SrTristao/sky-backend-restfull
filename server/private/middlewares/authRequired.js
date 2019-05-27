@@ -18,12 +18,7 @@ export const authRequired = (roles = []) => {
                 return next();
             }
 
-            const token =
-                req.get("Authorization").split(" ")[1];
-
-            const decoded = await decodeToken(token);
-
-            const user = await getById(decoded.id);
+            const user = await getById(req.user.id);
 
             if (token !== user.token) return res.status(HttpStatus.UNAUTHORIZED).send({
                 status: HttpStatus.UNAUTHORIZED,

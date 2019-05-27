@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import HttpStatus from 'http-status-codes';
+
 export const verifyToken = async (
   req, res, next
 ) => {

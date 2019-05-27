@@ -9,7 +9,6 @@ export const getById = async (req) => {
 
     if (!userFinded) throw new Error('user-not-found');
 
-    console.log(req.user)
     const token =
             req.get("Authorization").split(" ")[1];
 

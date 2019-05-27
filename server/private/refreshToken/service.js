@@ -8,16 +8,11 @@ import { updateToken } from '../../repositories/token';
 
 export const newToken = async (req) => {
   try {
-    const token =
-      req.get("Authorization");
-
-    const decoded = await decodeToken(token.split(" ")[1]);
-
-    const user = tokenMapper(decoded);
+    const user = tokenMapper(req.user);
 
     let tokenUpdated = await generateToken(user);
 
-    await updateToken(user.id, tokenUpdated);
+    await updateToken(req.user.id, tokenUpdated);
 
     logger({
       type: 'success',
