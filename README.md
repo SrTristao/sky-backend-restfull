@@ -9,22 +9,20 @@ This project was created with microservices architecture.
 
 ### Execute server
 Start server.
- > - npm start
+> npm start
 
 ###env file
-``
-PORT - port server
-ENV - environment 
-projectName - project name
-HOST - endpoint url
 
-dbUser - database user
-dbPassword - database password
-dbHost - database endpoint
+> PORT - port server
+> ENV - environment 
+> projectName - project name
+> HOST - endpoint url
+> dbUser - database user
+> dbPassword - database password
+> dbHost - database endpoint
+> saltKey - secret key jwt
+> tokenExpiresIn - token expires in
 
-saltKey - secret key jwt
-tokenExpiresIn - token expires in
-``
 
 ### API Docs
 
@@ -32,8 +30,8 @@ This API created with restFull and you need to provide authentication details wh
 
 for more details gopath
 
-> - /api-docs
+> /api-docs
 
 ### Execute tests
 Start tests.
- > - npm run test
+> npm run test
