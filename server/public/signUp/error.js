@@ -24,6 +24,9 @@ export default async (error) => {
     case 'password-required':
       await ApplicationError(mountObject('O campo senha é obrigatório.', HttpStatus.UNPROCESSABLE_ENTITY));
       break;
+    case 'email-invalid':
+      await ApplicationError(mountObject('O campo email é inválido.', HttpStatus.UNPROCESSABLE_ENTITY));
+      break;
     default:
       await ApplicationError(mountObject('Houve um erro inesperado.', HttpStatus.BAD_REQUEST));
       break;
@@ -36,4 +39,5 @@ const getErrors = error => {
   if (error.includes('`email` is required.')) return 'email-required'
   if (error.includes('`nome` is required.')) return 'name-required'
   if (error.includes('`senha` is required.')) return 'password-required'
+  if (error.includes('`email` is invalid')) return 'email-invalid'
 }

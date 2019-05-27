@@ -29,6 +29,12 @@ const phoneSchema = new Schema({
 
 export const Phone = model('Phone', phoneSchema)
 
+const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+const validateEmail = email=> {
+    return regexEmail.test(email)
+};
+
 const userSchema = new Schema({
     nome: {
         type: String,
@@ -37,7 +43,9 @@ const userSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: [regexEmail],
+        validate: [validateEmail],
     },
     senha: {
         type: String,
